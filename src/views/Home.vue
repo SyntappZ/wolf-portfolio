@@ -1,18 +1,55 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <div class="background">
+     <div class="welcome-text">
+       <h1>welcome to my <span class="highlight"> portfolio</span></h1>
+       
+       <p>Hi im Martyn, i am a front end web developer who also</p>
+       <p>builds android apps using web technologies.</p>
+       <button class="btn">Learn more</button>
+     </div>
+   </div>
+   <AboutComponent />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import AboutComponent from '../components/About';
+
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+   AboutComponent
   }
 }
 </script>
+
+<style scoped lang="scss">
+$primary: rgb(212, 97, 52);
+
+  .background {
+    width:100%;
+    height:100vh;
+    background: url('../images/wolf-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    display:flex;
+    justify-content: start;
+    align-items: center;
+
+    .welcome-text {
+      margin-left:50px;
+      color:white;
+      h1 {
+        font-size:45px;
+         text-transform: capitalize;
+
+        .highlight {
+          color: $primary;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+</style> 
