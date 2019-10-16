@@ -10,17 +10,21 @@
      </div>
    </div>
    <AboutComponent />
+   <SkillsComponent />
   </div>
 </template>
 
 <script>
 import AboutComponent from '../components/About';
+import SkillsComponent from '../components/Skills';
+
 
 
 export default {
   name: 'home',
   components: {
-   AboutComponent
+   AboutComponent,
+   SkillsComponent
   }
 }
 </script>
