@@ -1,5 +1,8 @@
 <template>
   <div class="about-component">
+    <!-- <div class="triangle"></div> -->
+    
+
     <div class="about-text">
       <div class="container wrap">
         <div class="logo-wrap">
@@ -35,6 +38,31 @@ $primary: rgb(212, 97, 52);
 .about-component {
   height: 70vh;
   background-color: #eee;
+  position: relative;
+
+  // .triangle {
+  //   position: absolute;
+  //   bottom:0;
+  //   left:0;
+  //   width: 0;
+  //   height: 0;
+  //   border-style: solid;
+  //   border-width: 0 200px 150px 200px;
+  //   border-color: transparent transparent $primary transparent;
+  // }
+//   .triangle2 {
+//     position: absolute;
+//     top:0;
+//     right:0;
+//     left:0;
+//     margin:auto;
+//     width: 0;
+//     height: 0;
+//    border-style: solid;
+// border-width: 150px 200px 0 200px;
+// border-color: $primary transparent transparent transparent;
+
+//   }
   .container {
     width: 70%;
     margin: auto;
@@ -45,8 +73,8 @@ $primary: rgb(212, 97, 52);
     .wrap {
       .logo-wrap {
         width: 80px;
-        margin:auto;
-  padding-top:40px;
+        margin: auto;
+        padding-top: 40px;
         img {
           width: 100%;
           opacity: 0.6;
@@ -56,19 +84,21 @@ $primary: rgb(212, 97, 52);
         width: 400px;
         text-align: center;
         margin: auto;
-        .line { 
-          width:100px;
-          height:4px;
-          margin:auto;
-          border-radius:50px;
-          background:$primary;
+        .line {
+          width: 100px;
+          height: 4px;
+          margin: auto;
+          border-radius: 50px;
+          background: $primary;
         }
         h1 {
           color: $primary;
         }
+        p {
+          padding-top: 40px;
+        }
       }
     }
   }
- 
 }
 </style> 
