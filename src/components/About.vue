@@ -36,9 +36,11 @@ export default {
 $primary: rgb(212, 97, 52);
 
 .about-component {
-  height: 70vh;
+  min-height: 80vh;
   background-color: #eee;
-  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items:center;
 
   // .triangle {
   //   position: absolute;
@@ -63,10 +65,7 @@ $primary: rgb(212, 97, 52);
 // border-color: $primary transparent transparent transparent;
 
 //   }
-  .container {
-    width: 70%;
-    margin: auto;
-  }
+  
 
   .about-text {
     height: 70%;
@@ -74,7 +73,7 @@ $primary: rgb(212, 97, 52);
       .logo-wrap {
         width: 80px;
         margin: auto;
-        padding-top: 40px;
+        
         img {
           width: 100%;
           opacity: 0.6;

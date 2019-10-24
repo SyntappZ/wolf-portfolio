@@ -3,6 +3,7 @@
     <div class="container">
       <div class="left-wrap">
         <div class="left-background">
+          <technologies />
           <div class="logo-wrap">
             <h1>Skills</h1>
           </div>
@@ -18,10 +19,13 @@
 
 <script>
 import skillContainer from "./SkillContainer";
+import technologies from "./Technologies";
+
 export default {
   name: "skills",
   components: {
-    skillContainer
+    skillContainer,
+    technologies
   }
 };
 </script>
@@ -85,32 +89,4 @@ $primary: #d46134;
 </style> 
 
 
-  // .hexagon {
-  //       position: relative;
-  //       width: 300px;
-  //       height: 173.21px;
-  //       background-color: $primary;
-  //       margin: 86.6px 0;
-
-  //        &:before,
-  //     &:after {
-  //       content: "";
-  //       position: absolute;
-  //       width: 0;
-  //       border-left: 150px solid transparent;
-  //       border-right: 150px solid transparent;
-  //     }
-
-  //       &:before {
-  //       bottom: 100%;
-  //       border-bottom: 86.6px solid $primary;
-  //     }
-
-  //    &:after {
-  //       top: 100%;
-  //       width: 0;
-  //       border-top: 86.6px solid $primary;
-  //     }
-
-
-  //     }
+  

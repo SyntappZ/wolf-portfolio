@@ -46,7 +46,7 @@ export default {
           icon: "fab fa-vuejs",
           title: "frameworks",
           text: "I have been building with Vue for a while and now\
-           i have moved onto Angular now while im using Ionic.",
+           i have moved onto Angular while im using Ionic.",
           id: "2",
           side:'right'
           
