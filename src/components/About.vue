@@ -11,12 +11,11 @@
           <h1>My Story</h1>
           <div class="line"></div>
           <p>
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Phasellus finibus gravida dignissim.
-            In a nisl placerat, ultrices purus vel, eleifend metus.
-            Donec volutpat pretium enim, lacinia fermentum mi congue ut.
-            Praesent quis tortor mi. Sed scelerisque fringilla pulvinar.
-            Curabitur aliquam quam ex, eu aliquet libero fermentum at.
+            Hi im Martyn, i am a web developer and i got into coding in 2018.
+            I have been using the framework Vue for the last few months and im really loving it,
+            i cant wait to try Angular & React.<br><br>
+            I've had many different jobs in the past but i feel now is the time for
+            me start my journey as a real web developer.
           </p>
         </div>
       </div>
