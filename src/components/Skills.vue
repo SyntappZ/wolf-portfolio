@@ -36,7 +36,6 @@ $primary: #d46134;
 .skills-component {
   min-height: 100vh;
   width: 100%;
- 
 
   .background {
     position: absolute;
@@ -50,40 +49,42 @@ $primary: #d46134;
     width: 100%;
     background-color: #ffffff;
     height: 100vh;
+  }
 
-    .left-wrap {
-      width: 40%;
-      background: url("../images/man-on-rock.jpg");
-      background-position: center center;
-      background-size: cover;
-      .left-background {
-        width: 100%;
-        height: 100vh;
-        background: rgba(71, 97, 114, 0.856);
-        position: relative;
-        .logo-wrap {
-          height: 150px;
-          width: 150px;
-          position: absolute;
-          margin: auto;
-       
-          right: -75px;
-          top: 0;
-          bottom: 0;
-          border-radius: 50%;
-          background: #eee;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-family: "Black Ops One", cursive;
-          color: rgb(104, 104, 104);
-        }
-      }
-    }
+  .left-wrap {
+    width: 40%;
+    background: url("../images/man-on-rock.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+  .left-background {
+    width: 100%;
+    height: 100vh;
+    background: rgba(71, 97, 114, 0.856);
+    position: relative;
+  }
 
-    .skills-wrap {
-      width: 60%;
-    }
+  .logo-wrap {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    margin: auto;
+
+    right: -75px;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: rgb(219, 219, 219);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Black Ops One", cursive;
+    color: rgb(104, 104, 104);
+  }
+
+  .skills-wrap {
+    width: 60%;
   }
 }
 </style> 

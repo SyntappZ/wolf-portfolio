@@ -18,6 +18,10 @@ body {
   margin: 0;
 }
 
+:focus {
+  outline:none;
+}
+
 .btn {
   padding:15px 20px;
   border:solid $primary 2px;

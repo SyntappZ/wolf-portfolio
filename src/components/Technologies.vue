@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="right-section">
-          <div class="skill-item" v-for="(skill, i) in skills2" :key="i">
+        <div class="skill-item" v-for="(skill, i) in skills2" :key="i">
           <div class="icon-wrap">
             <i class="fas fa-plus"></i>
           </div>
@@ -74,32 +74,35 @@ $blue: rgb(71, 97, 114);
   }
   .skills-list {
     position: absolute;
-    bottom:30px;
+    bottom: 30px;
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: space-around;
-    .skill-item {
-      display: flex;
-      height: 30px;
-      align-items: center;
-      .icon-wrap {
-        width: 40px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        i {
-          color: $primary;
-        }
-      }
-      p {
-        margin: 0;
-      }
+  }
+
+  .skill-item {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    p {
+      margin: 0;
     }
-    .left-section,
-    .right-section {
-      width: 50%;
+  }
+
+  .icon-wrap {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: $primary;
     }
+  }
+
+  .left-section,
+  .right-section {
+    width: 50%;
   }
 }
 </style>
