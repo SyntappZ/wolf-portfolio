@@ -32,13 +32,15 @@ export default {
 
 <style scoped lang="scss">
 $primary: rgb(212, 97, 52);
+$textOnWhite: rgb(148, 148, 148);
 
 .about-component {
-  min-height: 80vh;
+  min-height: 60vh;
   background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
   // .triangle {
   //   position: absolute;
@@ -86,6 +88,8 @@ $primary: rgb(212, 97, 52);
       }
       p {
         padding-top: 40px;
+        color:$textOnWhite;
+        
       }
     }
     .line {

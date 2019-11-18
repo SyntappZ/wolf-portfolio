@@ -3,20 +3,8 @@
     <div class="logo-wrap"></div>
     <div class="skills-list">
       <div class="left-section">
-        <div class="skill-item" v-for="(skill, i) in skills" :key="i">
-          <div class="icon-wrap">
-            <i class="fas fa-plus"></i>
-          </div>
-          <p>{{ skill.tech }}</p>
-        </div>
-      </div>
-      <div class="right-section">
-        <div class="skill-item" v-for="(skill, i) in skills2" :key="i">
-          <div class="icon-wrap">
-            <i class="fas fa-plus"></i>
-          </div>
-          <p>{{ skill.tech }}</p>
-        </div>
+      
+        
       </div>
     </div>
   </div>

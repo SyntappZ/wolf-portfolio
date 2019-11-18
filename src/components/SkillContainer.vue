@@ -46,7 +46,7 @@ export default {
           title: "frameworks",
           text:
             "I have been building with Vue for a while and now\
-           i have moved onto Angular while im using Ionic.",
+           i have moved onto Angular and react",
           id: "2",
           side: "right"
         },
@@ -68,6 +68,7 @@ export default {
 <style lang="scss" scoped>
 $primary: #d46134;
 $blue: rgb(71, 97, 114);
+$textOnWhite: rgb(148, 148, 148);
 
 .skill-container {
   width: 60%;
@@ -81,6 +82,7 @@ $blue: rgb(71, 97, 114);
     flex-direction: column;
     p {
       margin: 0;
+      color:$textOnWhite;
     }
     .row {
       width: 100%;

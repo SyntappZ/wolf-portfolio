@@ -1,59 +1,71 @@
 <template>
   <div class="home">
-   <div class="background">
-     <div class="welcome-text">
-       <h1>welcome to my <span class="highlight"> portfolio</span></h1>
-       
-       <p>Hi im Martyn, i am a front end web developer who also</p>
-       <p>builds android apps using web technologies.</p>
-       <button class="btn">Learn more</button>
-     </div>
-   </div>
-   <AboutComponent />
-   <SkillsComponent />
+    <div class="background">
+      <div class="full-container">
+        <div class="welcome-text">
+          <h1>welcome to my <span class="highlight"> portfolio</span></h1>
+
+          <p>Hi im Martyn, i am a front end web developer who also</p>
+          <p>builds android apps using web technologies.</p>
+          <button class="btn">Learn more</button>
+        </div>
+      </div>
+    </div>
+    <AboutComponent />
+    <SkillsComponent />
+    <ProjectsComponent />
   </div>
 </template>
 
 <script>
-import AboutComponent from '../components/About';
-import SkillsComponent from '../components/Skills';
-
-
+import AboutComponent from "../components/About";
+import SkillsComponent from "../components/Skills";
+import ProjectsComponent from "../components/Projects";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-   AboutComponent,
-   SkillsComponent
+    AboutComponent,
+    SkillsComponent,
+    ProjectsComponent
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
 $primary: rgb(212, 97, 52);
+$text: rgb(214, 214, 214);
+$blue: rgb(71, 97, 114);
 
-  .background {
-    width:100%;
-    height:100vh;
-    background: url('../images/wolf-background.jpg');
-    background-size: cover;
-    background-position: center center;
-    display:flex;
-    justify-content: start;
-    align-items: center;
+p {
+  color: $text;
+}
 
-    .welcome-text {
-      margin-left:50px;
-      color:white;
-      h1 {
-        font-size:45px;
-         text-transform: capitalize;
+.background {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/wolf-background.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-        .highlight {
-          color: $primary;
-          font-weight: 700;
-        }
-      }
+  .welcome-text {
+    margin-left: 50px;
+    color: white;
+    h1 {
+      font-size: 45px;
+      text-transform: capitalize;
     }
   }
-</style> 
+  .highlight {
+    color: $primary;
+    font-weight: 700;
+  }
+  .btn:hover {
+    background: $primary;
+    color: black;
+  }
+}
+</style>
