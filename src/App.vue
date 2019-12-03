@@ -3,6 +3,7 @@
     <div id="nav">
       <div class="full-container">
         <p>About</p>
+        <p>Skills</p>
         <p>Projects</p>
         <p>Contact</p>
       </div>
@@ -15,6 +16,7 @@
 <style lang="scss">
 $primary: rgb(212, 97, 52);
 $text: rgb(214, 214, 214);
+$textOnWhite: rgb(148, 148, 148);
 
 // font-family: 'Poiret One', cursive;
 // font-family: 'Cinzel', serif;

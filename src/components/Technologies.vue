@@ -1,10 +1,20 @@
 <template>
   <div class="tech-container">
-    <div class="logo-wrap"></div>
+    <div class="title">
+      <div>
+        <h1>tech i use</h1>
+        <div class="line"></div>
+      </div>
+    </div>
+
     <div class="skills-list">
-      <div class="left-section">
-      
-        
+      <div class="tech-wrap" v-for="skill in skills" :key="skill">
+        <div class="tech">
+          <p>{{skill}}</p>
+        </div>
+        <div class="leftover">
+          <div class="cover"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -12,38 +22,15 @@
 
 <script>
 export default {
+  mounted() {
+    this.skills = "html css javascript vue react angular cordova ionic materialize firebase git api's".split(
+      " "
+    );
+    
+  },
   data() {
     return {
-      skills: [
-        {
-          tech: "Html, Css"
-        },
-
-        {
-          tech: "Vue, Angular"
-        },
-
-        {
-          tech: "Cordova, Ionic"
-        },
-        {
-          tech: "Framework7, Vuetify"
-        }
-      ],
-      skills2: [
-        {
-          tech: "JavaScript, TypeScript"
-        },
-        {
-          tech: " JQuery, Sass"
-        },
-        {
-          tech: " Api's, Npm"
-        },
-        {
-          tech: " Materialize css, bootstrap"
-        }
-      ]
+      skills: []
     };
   }
 };
@@ -57,40 +44,78 @@ $blue: rgb(71, 97, 114);
   height: 100vh;
   color: rgb(233, 233, 233);
   position: relative;
-  .logo-wrap {
-    height: 40vh;
-  }
-  .skills-list {
-    position: absolute;
-    bottom: 30px;
+
+  .title {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .skill-item {
-    display: flex;
-    height: 30px;
-    align-items: center;
-    p {
-      margin: 0;
-    }
-  }
-
-  .icon-wrap {
-    width: 40px;
-    height: 30px;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    i {
-      color: $primary;
+
+    h1 {
+      text-transform: capitalize;
     }
   }
+  .skills-list {
+    height: 50vh;
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+  }
 
-  .left-section,
-  .right-section {
-    width: 50%;
+  .tech-wrap {
+    width: 100%;
+    display: flex;
+    margin: 9px 0;
+  }
+
+  .tech {
+    width: 20%;
+    background: $primary;
+    color: white;
+    p {
+      margin: 0;
+      padding: 8px;
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: 900;
+    }
+  }
+  .leftover {
+    width: 80%;
+   
+  }
+
+  .cover {
+     background: #ad390a;
+  }
+  .links {
+    height: 20vh;
+  }
+
+  .line {
+    width: 100px;
+    height: 4px;
+    margin: auto;
+    border-radius: 50px;
+    background: $primary;
+  }
+
+  .logo-wrap {
+    width: 180px;
+    height: 180px;
+
+    background: rgba(255, 255, 255, 0.562);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: auto;
+
+    img {
+      width: 70%;
+      opacity: 0.7;
+    }
   }
 }
 </style>

@@ -12,8 +12,8 @@
           <div class="line"></div>
           <p>
             Hi im Martyn, i am a web developer and i got into coding in 2018.
-            I have been using the framework Vue for the last few months and im really loving it,
-            i cant wait to try Angular & React.<br><br>
+            I have been using the framework Vue for the past 8 months and im really loving it,
+            i recently jumped onto angular and react to switch it up.<br><br>
             I've had many different jobs in the past but i feel now is the time for
             me start my journey as a real web developer.
           </p>
@@ -35,12 +35,12 @@ $primary: rgb(212, 97, 52);
 $textOnWhite: rgb(148, 148, 148);
 
 .about-component {
-  min-height: 60vh;
+  min-height: 50vh;
   background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  padding:50px 0;
 
   // .triangle {
   //   position: absolute;
