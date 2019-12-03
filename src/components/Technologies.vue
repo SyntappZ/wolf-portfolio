@@ -8,12 +8,12 @@
     </div>
 
     <div class="skills-list">
-      <div class="tech-wrap" v-for="skill in skills" :key="skill">
+      <div class="tech-wrap" v-for="(skill, i) in skills" :key="i">
         <div class="tech">
-          <p>{{skill}}</p>
+          <p>{{skill.tech}}</p>
         </div>
         <div class="leftover">
-          <div class="cover"></div>
+          <div :style="skill.width" class="cover"></div>
         </div>
       </div>
     </div>
@@ -23,10 +23,31 @@
 <script>
 export default {
   mounted() {
-    this.skills = "html css javascript vue react angular cordova ionic materialize firebase git api's".split(
+    const tech = "html css javascript vue react angular cordova ionic firebase git ajax".split(
       " "
     );
-    
+    const percent = [
+      "width:90%;",
+      "width:90%;",
+      "width:80%;",
+      "width:80%;",
+      "width:30%;",
+      "width:20%;",
+      "width:70%;",
+      "width:50%;",
+      "width:40%;",
+      "width:70%;",
+      "width:80%;"
+    ];
+
+    this.skills = tech.map((x, i) => {
+      return {
+        tech: x,
+        width: percent[i]
+      };
+    });
+
+    console.log(this.skills);
   },
   data() {
     return {
@@ -57,9 +78,8 @@ $blue: rgb(71, 97, 114);
     }
   }
   .skills-list {
-    height: 50vh;
-    width: 100%;
-    padding: 0 100px;
+    margin: auto;
+    width: 500px;
     box-sizing: border-box;
   }
 
@@ -83,11 +103,15 @@ $blue: rgb(71, 97, 114);
   }
   .leftover {
     width: 80%;
-   
+    
+    background: #c5c5c5;
+    
+
   }
 
   .cover {
-     background: #ad390a;
+    background: #a8431a;
+    height:100%;
   }
   .links {
     height: 20vh;
