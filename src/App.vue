@@ -1,22 +1,52 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div class="nav" :style="navColor">
       <div class="full-container">
-        <p>About</p>
-        <p>Skills</p>
-        <p>Projects</p>
-        <p>Contact</p>
+        <p @click="jumpTo('.home')">home</p>
+        <p @click="jumpTo('.about-component')">About</p>
+        <p @click="jumpTo('.skills-component')">Skills</p>
+        <p @click="jumpTo('.projects-component')">Projects</p>
       </div>
     </div>
-
     <router-view />
+    <footer>
+
+    </footer>
   </div>
 </template>
 
+<script>
+import jump from "jump.js";
+export default {
+  mounted() {
+    window.addEventListener("scroll", () => {
+    scrollY >= 938 && scrollY < 1506 ? this.navColor = 'color:#555;' 
+    : scrollY >= 1506  && scrollY < 2443 ? this.navColor = 'color:rgb(214, 214, 214);' 
+    : scrollY >= 2443 ? this.navColor = 'color:#555;' 
+    : this.navColor = 'color:rgb(214, 214, 214);' 
+    });
+  },
+
+  data() {
+    return {
+      navColor: ''
+    };
+  },
+  methods: {
+    jumpTo(section) {
+      jump(section, {
+        offset: 1
+      });
+    },
+  
+  }
+};
+</script>
 <style lang="scss">
 $primary: rgb(212, 97, 52);
 $text: rgb(214, 214, 214);
 $textOnWhite: rgb(148, 148, 148);
+
 
 // font-family: 'Poiret One', cursive;
 // font-family: 'Cinzel', serif;
@@ -56,18 +86,25 @@ p {
   margin: 0;
   letter-spacing: 1px;
 
-  #nav {
+  .nav {
     padding: 10px 0;
     width: 100%;
-    position: absolute;
-
+    position: fixed;
+    z-index: 10;
+    color: $text;
+    transition: .3s;
     p {
       display: inline-block;
       padding: 10px 30px;
       margin: 10px 20px;
       cursor: pointer;
-      color: $text;
+      
     }
   }
+ footer {
+   height:10vh;
+   color:#eee;
+   background:#333;
+ }
 }
 </style>

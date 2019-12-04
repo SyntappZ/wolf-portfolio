@@ -37,7 +37,7 @@ export default {
           icon: "fas fa-mobile-alt",
           title: "responsive",
           text:
-            "My projects are all respondive and will adapt to Web, Tablet and Mobile sizes.",
+            "My projects are all responsive and will adapt to Web, Tablet and Mobile sizes.",
           id: "1",
           side: "left"
         },

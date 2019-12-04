@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <div class="projects-component">
     <div class="top-breaker">
       <div class="logo-container">
         <div class="logo-wrap">
@@ -153,7 +153,7 @@ $text: rgb(214, 214, 214);
 $blue: rgb(71, 97, 114);
 $textOnWhite: rgb(148, 148, 148);
 
-.projects {
+.projects-component {
   min-height: 100vh;
   width: 100%;
 

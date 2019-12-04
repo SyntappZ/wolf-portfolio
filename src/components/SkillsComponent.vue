@@ -11,20 +11,20 @@
       </div>
 
       <div class="skills-wrap">
-        <skillContainer />
+        <skills />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import skillContainer from "./SkillContainer";
-import technologies from "./Technologies";
+import skills from "./SkillsSection";
+import technologies from "./TechnologiesSection";
 
 export default {
-  name: "skills",
+  name: "skillsComponent",
   components: {
-    skillContainer,
+    skills,
     technologies
   }
 };
@@ -60,7 +60,7 @@ $primary: #d46134;
   .left-background {
     width: 100%;
     height: 100vh;
-    background: rgba(39, 39, 39, 0.856);
+    background: rgba(39, 39, 39, 0.925);
     position: relative;
   }
 

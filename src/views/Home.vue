@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import AboutComponent from "../components/About";
-import SkillsComponent from "../components/Skills";
-import ProjectsComponent from "../components/Projects";
+import AboutComponent from "../components/AboutComponent";
+import SkillsComponent from "../components/SkillsComponent";
+import ProjectsComponent from "../components/ProjectsComponent";
 
 export default {
   name: "home",
