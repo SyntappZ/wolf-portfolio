@@ -1,6 +1,9 @@
 <template>
   <div class="projects-component">
-    <modal v-if="modalOpen" @closeModal="modalOpen = false" :selectedProject="selctedProject" />
+    <transition name="fade">
+      <modal v-if="modalOpen" @closeModal="modalOpen = false" :selectedProject="selctedProject" />
+    </transition>
+
     <div class="top-breaker">
       <div class="logo-container">
         <div class="logo-wrap">
@@ -80,11 +83,11 @@ export default {
           ["ionic", "angular", "cordova"],
           "https://play.google.com/store/apps/details?id=io.syntappz.regex",
           "https://github.com/SyntappZ/regex-cheatsheet",
-          `This app has full documents on javaScript regular expressions and most will apply to other languages too.
+          `I made this app with ionic/angular and this app has full documents on javaScript regular expressions and most will apply to other languages too.
               It also has a regex tester which can test with match which will highlight the matched results, 
               or can replace words with replace.`,
           "fab fa-angular",
-          ['./regexjs/list.jpg', './regexjs/text.jpg', './regexjs/tester.jpg'],
+          ["./regexjs/list.jpg", "./regexjs/text.jpg", "./regexjs/tester.jpg"],
           false
         ),
         createProject(
@@ -92,11 +95,15 @@ export default {
           ["vue", "framework 7", "cordova", "imgur api"],
           "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
           "https://github.com/SyntappZ/memester",
-          `memester is a meme search and share app for android, this has better functionality then the meme-apk with lazyLoad images with
+          `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with
              masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
-             and save images to favorites.`,
+             and you can also save images to your favorites.`,
           "fab fa-vuejs",
-          ['./memester/home.jpg','./memester/image.jpg','./memester/tags.jpg'],
+          [
+            "./memester/home.jpg",
+            "./memester/image.jpg",
+            "./memester/tags.jpg"
+          ],
           false
         ),
         createProject(
@@ -109,21 +116,20 @@ export default {
              can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
              easier.`,
           "fab fa-vuejs",
-          './vault/main.png',
+          "./vault/main.png",
           true
-
         ),
         createProject(
           "awesome recipes",
           ["vanilla javascript", "sass", "edamam api"],
           "https://awesome-recipes.netlify.com",
           "https://github.com/SyntappZ/Awesome-Recipes",
-          `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality 
-            and just have the search function, i got some well needed design practice in making this app as i still feel like
+          `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
+            and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
             my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
              for most of them.`,
           "fab fa-sass",
-          './awesome/main.png',
+          "./awesome/main.png",
           true
         ),
         createProject(
@@ -132,9 +138,10 @@ export default {
           "https://world-of-information.netlify.com",
           "https://github.com/SyntappZ/world-of-information",
           `World of information is a wiki snippet search application. i learnt a good bit about using apis and axios making this project.
+          this believe was my first project using ajax and getting data from an api.
             `,
           "fab fa-vuejs",
-          './woi/main.jpg',
+          "./woi/main.jpg",
           true
         ),
         createProject(
@@ -145,7 +152,7 @@ export default {
           `I made this site because im a big fan of the supernatural series and thought it would be good to get 
             some information on what the angel and demon characters are actually based on.`,
           "fab fa-vuejs",
-          './a-n-d/main.png',
+          "./a-n-d/main.png",
           true
         ),
         createProject(
@@ -156,7 +163,7 @@ export default {
           `I made this using vue, framework7 and cordova and this is for a game called trials fusion, it allows people to search for other peoples ninja tracks that they have made
              so they can play them, i used a web scraper with node.js to get the track details. i also learned about virtual lists making this app.`,
           "fab fa-vuejs",
-          ['./fusion/front.jpg', './fusion/filter.jpg', './fusion/info.jpg'],
+          ["./fusion/front.jpg", "./fusion/filter.jpg", "./fusion/info.jpg"],
           false
         )
       ]
@@ -356,6 +363,12 @@ $textOnWhite: rgb(148, 148, 148);
     background: #000;
   }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
+}
   @media (max-width: 1500px) {
     .project-wrap {
       width: 100%;

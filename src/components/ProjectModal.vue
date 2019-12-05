@@ -64,7 +64,7 @@ $textOnWhite: rgb(131, 131, 131);
   width: 100vw;
   position: fixed;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.726);
+  background: rgba(0, 0, 0, 0.829);
   display: flex;
   justify-content: center;
   align-items: center;
