@@ -73,10 +73,10 @@ $textOnWhite: rgb(148, 148, 148);
 .skill-container {
   width: 60%;
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
 
   .layout {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;

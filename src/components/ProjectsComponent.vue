@@ -1,5 +1,6 @@
 <template>
   <div class="projects-component">
+    <modal v-if="modalOpen" @closeModal="modalOpen = false" :selectedProject="selctedProject" />
     <div class="top-breaker">
       <div class="logo-container">
         <div class="logo-wrap">
@@ -7,10 +8,10 @@
         </div>
         <p>Check out my</p>
         <h1>Projects</h1>
-        
+
         <div class="line"></div>
-       
-       <i class="fas fa-sort-down"></i>
+
+        <i class="fas fa-sort-down"></i>
       </div>
     </div>
     <div class="triangle"></div>
@@ -20,18 +21,18 @@
           <div class="img"></div>
           <div class="cover">
             <h2>{{ project.title }}</h2>
-          
+
             <i :class="project.icon"></i>
             <div class="tech">
               <h5 v-for="(tech, i) in project.tech" :key="i">{{tech}}</h5>
             </div>
           </div>
-        <div class="see-more">
-          <div class="see-more-line"></div>
+          <div class="see-more">
+            <div class="see-more-line"></div>
             <i :class="project.icon"></i>
             <h4>{{ project.title }}</h4>
-          <button class="btn">see more</button>
-        </div>
+            <button class="btn" @click="openModal(project)">see more</button>
+          </div>
         </div>
       </div>
     </div>
@@ -39,22 +40,28 @@
 </template>
 
 <script>
-const createProject = (title, tech, link, github, desc, icon, img) => {
+import modal from "./ProjectModal";
+const createProject = (title, tech, link, github, desc, icon, img, type) => {
   return {
     title: title,
     tech: tech,
-    link: link,
+    pageLink: link,
     github: github,
     description: desc,
     icon: icon,
-    image: img
+    image: img,
+    isWebsite: type
   };
 };
 export default {
-  components: {},
+  components: {
+    modal
+  },
   data() {
     return {
       hoverProject: false,
+      modalOpen: false,
+      selectedProject: null,
       projects: [
         createProject(
           "image recipes",
@@ -65,7 +72,8 @@ export default {
             plan to make an app using vision in the future. it was also my first time using react 
             and i really like how it works i will defo be making more projects with react in the future.`,
           "fab fa-react",
-          ""
+          "./imageRecipe/main.png",
+          true
         ),
         createProject(
           "regex-cheatsheet",
@@ -75,7 +83,9 @@ export default {
           `This app has full documents on javaScript regular expressions and most will apply to other languages too.
               It also has a regex tester which can test with match which will highlight the matched results, 
               or can replace words with replace.`,
-          "fab fa-angular"
+          "fab fa-angular",
+          ['./regexjs/list.jpg', './regexjs/text.jpg', './regexjs/tester.jpg'],
+          false
         ),
         createProject(
           "memester",
@@ -85,18 +95,23 @@ export default {
           `memester is a meme search and share app for android, this has better functionality then the meme-apk with lazyLoad images with
              masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
              and save images to favorites.`,
-          "fab fa-vuejs"
+          "fab fa-vuejs",
+          ['./memester/home.jpg','./memester/image.jpg','./memester/tags.jpg'],
+          false
         ),
         createProject(
           "the vault",
           ["vue", "vuetify", "firebase"],
           "https://the-vault.ml",
           "https://github.com/SyntappZ/the-vault",
-          `welcome to the vault a password manager made with vue and vuetify it can store passwords or notes, you can add, 
-            delete, edit and favorite passwords and notes, the password manager has a strength indicator and a generator so you
-             can always have a stong password stored you can filter between strengths or favorites, the notes has a word counter 
-             and a favorites filter too.`,
-          "fab fa-vuejs"
+          `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
+            delete, edit both, the password manager has a strength indicator and a generator so you
+             can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
+             easier.`,
+          "fab fa-vuejs",
+          './vault/main.png',
+          true
+
         ),
         createProject(
           "awesome recipes",
@@ -107,16 +122,20 @@ export default {
             and just have the search function, i got some well needed design practice in making this app as i still feel like
             my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
              for most of them.`,
-          "fab fa-sass"
+          "fab fa-sass",
+          './awesome/main.png',
+          true
         ),
         createProject(
           "world of information",
           ["vue", "materialize css", "wiki api"],
           "https://world-of-information.netlify.com",
           "https://github.com/SyntappZ/world-of-information",
-          `world of information is a wiki snippet search application. i learnt a good bit about using apis and axios making this project.
+          `World of information is a wiki snippet search application. i learnt a good bit about using apis and axios making this project.
             `,
-          "fab fa-vuejs"
+          "fab fa-vuejs",
+          './woi/main.jpg',
+          true
         ),
         createProject(
           "angels and demons",
@@ -125,25 +144,30 @@ export default {
           "https://github.com/SyntappZ/angels-and-demons",
           `I made this site because im a big fan of the supernatural series and thought it would be good to get 
             some information on what the angel and demon characters are actually based on.`,
-          "fab fa-vuejs"
+          "fab fa-vuejs",
+          './a-n-d/main.png',
+          true
         ),
         createProject(
           "fusion ninja",
           ["vue", "framework 7", "cordova"],
           "https://play.google.com/store/apps/details?id=io.syntappz.fusion",
           "https://github.com/SyntappZ/trials-fusion-ninja-app",
-          `i made this app for a game called trials fusion, it allows people to search for other peoples ninja tracks
-             so they can play them, there is already a website that does this called https://fusion.ninja-central.com but its not very
-              responsive on mobile and makes it hard to use, all information for the app comes from the website i used a web scrapper with 
-              node.js to get the track details and converted into an object this app was made using vue, framework7 and cordova it was fun 
-              making this app as i am a fan of the game it helped me understand how to use vue, framework7 and cordova together
-               and i also learned about virtual lists making this app.`,
-          "fab fa-vuejs"
+          `I made this using vue, framework7 and cordova and this is for a game called trials fusion, it allows people to search for other peoples ninja tracks that they have made
+             so they can play them, i used a web scraper with node.js to get the track details. i also learned about virtual lists making this app.`,
+          "fab fa-vuejs",
+          ['./fusion/front.jpg', './fusion/filter.jpg', './fusion/info.jpg'],
+          false
         )
       ]
     };
   },
-  methods: {}
+  methods: {
+    openModal(projectInfo) {
+      this.selctedProject = projectInfo;
+      this.modalOpen = true;
+    }
+  }
 };
 </script>
 
@@ -156,6 +180,7 @@ $textOnWhite: rgb(148, 148, 148);
 .projects-component {
   min-height: 100vh;
   width: 100%;
+  position: relative;
 
   .top-breaker {
     height: 400px;
@@ -181,10 +206,10 @@ $textOnWhite: rgb(148, 148, 148);
       text-transform: capitalize;
       color: $textOnWhite;
     }
-    i{
-      color:$primary;
-     
-      font-size:40px;
+    i {
+      color: $primary;
+
+      font-size: 40px;
     }
   }
 
@@ -217,7 +242,6 @@ $textOnWhite: rgb(148, 148, 148);
     border-width: 100px 49vw 0 49vw;
     border-color: #eee transparent transparent transparent;
   }
-  
 
   .project-wrap {
     width: 1500px;
@@ -230,7 +254,7 @@ $textOnWhite: rgb(148, 148, 148);
   .project {
     width: 350px;
     height: 250px;
-    background: rgb(29, 29, 29);
+    background: rgb(0, 0, 0);
     color: white;
     text-align: center;
     margin: 10px;
@@ -248,7 +272,6 @@ $textOnWhite: rgb(148, 148, 148);
       transition: 0.5s ease;
       opacity: 1;
     }
-
   }
 
   .cover {
@@ -256,7 +279,7 @@ $textOnWhite: rgb(148, 148, 148);
     width: 100%;
     border-radius: 30px;
     height: 100%;
-    background: rgba(19, 19, 19, 0.829);
+    background: rgba(0, 0, 0, 0.829);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -279,61 +302,58 @@ $textOnWhite: rgb(148, 148, 148);
   }
 
   .see-more {
-     position: absolute;
+    position: absolute;
     width: 100%;
     border-radius: 30px;
     height: 100%;
-    background: rgb(19, 19, 19);
-    
+    background: rgb(0, 0, 0);
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     opacity: 0;
-    transition: .3s ease;
+    transition: 0.3s ease;
     &:hover {
       opacity: 1;
     }
     i {
       position: absolute;
-      top:20px;
-      left:0;
-      right:0;
-      margin:auto;
-      font-size:30px;
+      top: 20px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font-size: 30px;
     }
     h4 {
-       position: absolute;
-      bottom:50px;
-      left:0;
-      right:0;
-      margin:auto;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      margin: auto;
       letter-spacing: 2px;
       text-transform: capitalize;
     }
-   
   }
-   .see-more-line {
-      position:absolute;
-      height:130px;
-      width:100px;
-      z-index:0;
-      left:0;
-      right:0;
-      margin:auto;
-     border-top:solid white 2px;
-     
-    }
+  .see-more-line {
+    position: absolute;
+    height: 130px;
+    width: 100px;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-top: solid white 2px;
+  }
   .btn {
-    border-radius:0;
+    border-radius: 0;
     cursor: pointer;
-    border-left:none;
-    border-right:none;
+    border-left: none;
+    border-right: none;
     position: relative;
     z-index: 1;
-       width:200px;
-    margin:auto;
-   background: rgb(19, 19, 19);
-    
+    width: 200px;
+    margin: auto;
+    background: #000;
   }
 
   @media (max-width: 1500px) {

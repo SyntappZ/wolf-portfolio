@@ -7,7 +7,7 @@
 
           <p>Hi im Martyn, i am a front end web developer who also</p>
           <p>builds android apps using web technologies.</p>
-          <button class="btn">Learn more</button>
+          <button class="btn" @click="jumpToAbout">Learn more</button>
         </div>
       </div>
     </div>
@@ -21,6 +21,8 @@
 import AboutComponent from "../components/AboutComponent";
 import SkillsComponent from "../components/SkillsComponent";
 import ProjectsComponent from "../components/ProjectsComponent";
+import jump from "jump.js";
+
 
 export default {
   name: "home",
@@ -28,6 +30,16 @@ export default {
     AboutComponent,
     SkillsComponent,
     ProjectsComponent
+  },
+  methods: {
+    jumpToAbout() {
+      console.log('jeff oh baby')
+      jump('.about-component', {
+        offset: 1
+      });
+    },
+  
+  
   }
 };
 </script>
@@ -63,6 +75,7 @@ p {
     color: $primary;
     font-weight: 700;
   }
+  
   .btn:hover {
     background: $primary;
     color: black;

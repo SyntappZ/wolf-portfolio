@@ -60,7 +60,7 @@ $text: rgb(214, 214, 214);
 $textOnWhite: rgb(148, 148, 148);
 
 .tech-container {
-  height: 100vh;
+  min-height: 100vh;
   color: rgb(233, 233, 233);
   position: relative;
 
@@ -89,6 +89,7 @@ $textOnWhite: rgb(148, 148, 148);
     margin: 5px;
     border: solid 2px $primary;
     color: #eee;
+    border-radius: 4px;
     p {
       margin: 0;
       padding: 8px;
@@ -100,7 +101,7 @@ $textOnWhite: rgb(148, 148, 148);
 
   .top,
   .bottom {
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .cover {
@@ -152,7 +153,12 @@ $textOnWhite: rgb(148, 148, 148);
     i {
       font-size: 50px;
       color: $primary;
+      transition: .3s;
     }
+  }
+  .link:hover i{
+    color:$text;
+    transform: scale(1.1);
   }
 }
 </style>

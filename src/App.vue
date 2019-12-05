@@ -20,9 +20,9 @@ import jump from "jump.js";
 export default {
   mounted() {
     window.addEventListener("scroll", () => {
-    scrollY >= 938 && scrollY < 1506 ? this.navColor = 'color:#555;' 
-    : scrollY >= 1506  && scrollY < 2443 ? this.navColor = 'color:rgb(214, 214, 214);' 
-    : scrollY >= 2443 ? this.navColor = 'color:#555;' 
+    scrollY >= 918 && scrollY < 1490 ? this.navColor = 'color:#555;' 
+    : scrollY >= 1490  && scrollY < 2423 ? this.navColor = 'color:rgb(214, 214, 214);' 
+    : scrollY >= 2423 ? this.navColor = 'color:#555;' 
     : this.navColor = 'color:rgb(214, 214, 214);' 
     });
   },
@@ -102,9 +102,9 @@ p {
     }
   }
  footer {
-   height:10vh;
+   height:20vh;
    color:#eee;
-   background:#333;
+   background:#000;
  }
 }
 </style>

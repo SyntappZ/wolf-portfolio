@@ -60,7 +60,7 @@ $primary: #d46134;
   .left-background {
     width: 100%;
     height: 100vh;
-    background: rgba(39, 39, 39, 0.925);
+    background: rgba(0, 0, 0, 0.856);
     position: relative;
   }
 

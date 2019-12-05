@@ -88,6 +88,7 @@ $textOnWhite: rgb(148, 148, 148);
       }
       p {
         padding-top: 40px;
+        line-height: 25px;
         color:$textOnWhite;
         
       }
