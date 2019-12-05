@@ -114,7 +114,7 @@ export default {
           `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
             delete, edit both, the password manager has a strength indicator and a generator so you
              can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
-             easier.`,
+             easier. for testing use ----> email: test@test.com password: Test1234`,
           "fab fa-vuejs",
           "./vault/main.png",
           true
@@ -149,7 +149,7 @@ export default {
           ["vue", "wiki api"],
           "https://angels-and-demons.netlify.com",
           "https://github.com/SyntappZ/angels-and-demons",
-          `I made this site because im a big fan of the supernatural series and thought it would be good to get 
+          `I made this site because im a fan of the supernatural series and thought it would be good to get 
             some information on what the angel and demon characters are actually based on.`,
           "fab fa-vuejs",
           "./a-n-d/main.png",
