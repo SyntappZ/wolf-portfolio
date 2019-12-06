@@ -59,9 +59,8 @@ $text: rgb(214, 214, 214);
 $textOnWhite: rgb(131, 131, 131);
 
 .modal-component {
-  position: absolute;
   z-index: 10;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -120,7 +119,7 @@ $textOnWhite: rgb(131, 131, 131);
   .links {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
 
     a {
       display: inline-block;
@@ -132,17 +131,16 @@ $textOnWhite: rgb(131, 131, 131);
       text-transform: capitalize;
       font-weight: 900;
       margin: 30px 0;
-        font-weight: bold;
+      font-weight: bold;
       letter-spacing: 2px;
       transition: 0.3s;
       &:hover {
         border: solid rgb(83, 83, 83) 2px;
-        
       }
     }
   }
   .bold {
-    color:black;
+    color: black;
     font-family: sans-serif;
   }
 
@@ -150,34 +148,51 @@ $textOnWhite: rgb(131, 131, 131);
     display: flex;
     justify-content: space-between;
     background: rgb(224, 224, 224);
-    min-width: 450px;
+    width: 100%;
     .image {
       width: 32%;
-      height: 20vmax;
+      height: auto;
       border-bottom: rgb(224, 224, 224) solid 10px;
       img {
         width: 100%;
-        height: 20vmax;
+        height: auto;
       }
     }
   }
+}
 
-   @media (max-width: 1024px) {
-   .modal {
-     width:100%;
-     height:100%;
+@media (max-width: 1024px) {
+  .modal-component {
+    .links {
+      width: 70%;
+      margin: auto;
     }
+
+    .modal {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-component {
+    overflow-y: auto;
+    .text-area p {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    .links {
+      width: 100%;
+    }
+
+    .modal {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+    }
+
     .android-images {
-   
-    .image {
-      width: 32%;
-      height: 40vh;
-      border-bottom: rgb(224, 224, 224) solid 10px;
-      img {
-        width: 100%;
-        height: 40vh;
-      }
-    }
+      width: 100%;
     }
   }
 }

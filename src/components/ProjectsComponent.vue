@@ -90,7 +90,7 @@ export default {
           true
         ),
         createProject(
-          "regex-cheatsheet",
+          "regex-js",
           ["ionic", "angular", "cordova"],
           "https://play.google.com/store/apps/details?id=io.syntappz.regex",
           "https://github.com/SyntappZ/regex-cheatsheet",

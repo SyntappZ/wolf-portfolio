@@ -60,10 +60,10 @@ $textOnWhite: rgb(148, 148, 148);
 .skill-container {
   width: 60%;
   margin: auto;
-  min-height: 100vh;
+  height: 100%;
 
   .layout {
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -112,6 +112,17 @@ $textOnWhite: rgb(148, 148, 148);
   }
 }
 
+@media (max-width: 1300px) {
+  .skill-container {
+    padding: 50px 0;
+    min-height: 100vh;
+    box-sizing:border-box;
+     .layout {
+       height:100%;
+      }
+  }
+}
+
 @media (max-width: 800px) {
   .skill-container {
     width: 90%;
@@ -133,7 +144,7 @@ $textOnWhite: rgb(148, 148, 148);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
    .skill-container {
       .skill-wrap {
         height:280px;
