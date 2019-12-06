@@ -41,14 +41,15 @@ $primary: #d46134;
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .container {
     display: flex;
     width: 100%;
     background-color: #ffffff;
-    height: 100vh;
+    min-height: 100vh;
+    flex-wrap: wrap;
   }
 
   .left-wrap {
@@ -59,9 +60,10 @@ $primary: #d46134;
   }
   .left-background {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(0, 0, 0, 0.856);
     position: relative;
+    padding-bottom: 40px;
   }
 
   .logo-wrap {
@@ -69,13 +71,11 @@ $primary: #d46134;
     width: 150px;
     position: absolute;
     margin: auto;
-
     right: -75px;
     top: 0;
     bottom: 0;
     border-radius: 50%;
     background: rgb(219, 219, 219);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +85,21 @@ $primary: #d46134;
 
   .skills-wrap {
     width: 60%;
+  }
+
+  @media (max-width: 1300px) {
+    .skills-wrap,
+    .left-wrap {
+      width: 100%;
+    }
+    .logo-wrap {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 600px) {
   }
 }
 </style> 

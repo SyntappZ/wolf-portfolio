@@ -5,7 +5,7 @@
         <i class="fas fa-times"></i>
       </div>
       <div class="image" v-if="project.isWebsite">
-        <img :src="project.image" alt="project-img" />
+        <img :src="project.image" alt="project image" />
       </div>
       <div class="android-images" v-else>
         <div class="image" v-for="(img, i) in project.image" :key="i">
@@ -16,6 +16,7 @@
         <div class="text">
           <h2>{{ project.title }}</h2>
           <p>{{ project.description }}</p>
+          <p class="bold">{{ project.bold }}</p>
         </div>
         <hr />
         <!-- <div class="tech-wrap">
@@ -135,10 +136,14 @@ $textOnWhite: rgb(131, 131, 131);
       letter-spacing: 2px;
       transition: 0.3s;
       &:hover {
-        border: solid black 2px;
-        color: black;
+        border: solid rgb(83, 83, 83) 2px;
+        
       }
     }
+  }
+  .bold {
+    color:black;
+    font-family: sans-serif;
   }
 
   .android-images {
@@ -154,6 +159,25 @@ $textOnWhite: rgb(131, 131, 131);
         width: 100%;
         height: 20vmax;
       }
+    }
+  }
+
+   @media (max-width: 1024px) {
+   .modal {
+     width:100%;
+     height:100%;
+    }
+    .android-images {
+   
+    .image {
+      width: 32%;
+      height: 40vh;
+      border-bottom: rgb(224, 224, 224) solid 10px;
+      img {
+        width: 100%;
+        height: 40vh;
+      }
+    }
     }
   }
 }

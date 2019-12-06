@@ -1,27 +1,14 @@
 <template>
   <div class="skill-container">
     <div class="layout">
-      <div class="row" v-for="skill in skills" :key="skill.id">
-        <div class="skill-wrap" v-if="skill.side == 'left'">
-          <div class="icon-wrap">
-            <i :class="skill.icon"></i>
-          </div>
-          <div class="line"></div>
-          <div class="text">
-            <h2>{{ skill.title }}</h2>
-            <p>{{ skill.text }}</p>
-          </div>
+      <div class="skill-wrap" v-for="skill in skills" :key="skill.id">
+        <div class="icon-wrap">
+          <i :class="skill.icon"></i>
         </div>
-
-        <div class="skill-wrap" v-else>
-          <div class="text">
-            <h2>{{ skill.title }}</h2>
-            <p>{{ skill.text }}</p>
-          </div>
-          <div class="line"></div>
-          <div class="icon-wrap">
-            <i :class="skill.icon"></i>
-          </div>
+        <div class="line"></div>
+        <div class="text">
+          <h2>{{ skill.title }}</h2>
+          <p>{{ skill.text }}</p>
         </div>
       </div>
     </div>
@@ -82,48 +69,79 @@ $textOnWhite: rgb(148, 148, 148);
     flex-direction: column;
     p {
       margin: 0;
-      color:$textOnWhite;
+      color: $textOnWhite;
     }
-    .row {
-      width: 100%;
-      height: 20vh;
+  }
+  .skill-wrap {
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    &:nth-child(2) {
+      flex-direction: row-reverse;
     }
+  }
+
+  .line {
+    width: 10%;
+    height: 2px;
+    border-radius: 50px;
+    background: #eee;
+  }
+  .icon-wrap {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(219, 219, 219);
+    color: rgb(98, 98, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+  }
+
+  .text {
+    width: 300px;
+    height: 20vh;
+    h2 {
+      color: $primary;
+      text-transform: capitalize;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .skill-container {
+    width: 90%;
 
     .skill-wrap {
-      width: 100%;
-      height: 20vh;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+      flex-direction: column;
+      height: 370px;
+      margin: 80px auto;
 
-    .line {
-      width: 10%;
-      height: 2px;
-      border-radius: 50px;
-      background: #eee;
-    }
-    .icon-wrap {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgb(219, 219, 219);
-      color: rgb(98, 98, 98);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 50px;
+      &:nth-child(2) {
+        flex-direction: column;
+      }
     }
 
     .text {
-      width: 300px;
-      height: 20vh;
-      h2 {
-        color: $primary;
-        text-transform: capitalize;
-      }
+     
+      text-align: center;
     }
   }
+}
+
+@media (max-width: 600px) {
+   .skill-container {
+      .skill-wrap {
+        height:280px;
+      }
+   }
+   .text {
+      width:35%;
+     
+    }
 }
 </style>

@@ -44,7 +44,17 @@
 
 <script>
 import modal from "./ProjectModal";
-const createProject = (title, tech, link, github, desc, icon, img, type) => {
+const createProject = (
+  title,
+  tech,
+  link,
+  github,
+  desc,
+  icon,
+  img,
+  type,
+  bold
+) => {
   return {
     title: title,
     tech: tech,
@@ -53,7 +63,8 @@ const createProject = (title, tech, link, github, desc, icon, img, type) => {
     description: desc,
     icon: icon,
     image: img,
-    isWebsite: type
+    isWebsite: type,
+    bold: bold
   };
 };
 export default {
@@ -75,7 +86,7 @@ export default {
             plan to make an app using vision in the future. it was also my first time using react 
             and i really like how it works i will defo be making more projects with react in the future.`,
           "fab fa-react",
-          "./imageRecipe/main.png",
+          "./imageRecipe/main.jpg",
           true
         ),
         createProject(
@@ -114,10 +125,11 @@ export default {
           `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
             delete, edit both, the password manager has a strength indicator and a generator so you
              can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
-             easier. for testing use ----> email: test@test.com password: Test1234`,
+             easier. for testing use ---->`,
           "fab fa-vuejs",
-          "./vault/main.png",
-          true
+          "./vault/main.jpg",
+          true,
+          "email: test@test.com - password: Test1234"
         ),
         createProject(
           "awesome recipes",
@@ -129,7 +141,7 @@ export default {
             my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
              for most of them.`,
           "fab fa-sass",
-          "./awesome/main.png",
+          "./awesome/main.jpg",
           true
         ),
         createProject(
@@ -152,7 +164,7 @@ export default {
           `I made this site because im a fan of the supernatural series and thought it would be good to get 
             some information on what the angel and demon characters are actually based on.`,
           "fab fa-vuejs",
-          "./a-n-d/main.png",
+          "./a-n-d/main.jpg",
           true
         ),
         createProject(
@@ -363,18 +375,29 @@ $textOnWhite: rgb(148, 148, 148);
     background: #000;
   }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to  {
-  opacity: 0;
-}
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
   @media (max-width: 1500px) {
+    
+      .project-wrap {
+        width: 100%;
+      }
+    
+  }
+  @media (max-width: 600px) {
     .project-wrap {
-      width: 100%;
-    }
-    .project {
-    }
+        width: 95%;
+      }
+      .logo-container {
+        width: 100%;
+      }
+    
   }
 }
 </style>

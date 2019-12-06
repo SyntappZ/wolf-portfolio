@@ -102,9 +102,20 @@ p {
     }
   }
  footer {
-   height:20vh;
+   height:20vmin;
    color:#eee;
    background:#000;
+ }
+
+
+ 
+  @media (max-width: 1600px) {
+    .nav {
+      display:none;
+    }
+ }
+ @media (max-width: 600px) {
+   
  }
 }
 </style>

@@ -160,5 +160,10 @@ $textOnWhite: rgb(148, 148, 148);
     color:$text;
     transform: scale(1.1);
   }
+
+   @media (max-width: 1024px) {
+  }
+  @media (max-width: 600px) {
+  }
 }
 </style>
