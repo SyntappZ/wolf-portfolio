@@ -82,10 +82,12 @@ $textOnWhite: rgb(131, 131, 131);
     bottom: 0;
     font-size: 20px;
     color: grey;
+    
     cursor: pointer;
     transition: 0.3s;
     &:hover {
       color: black;
+     
     }
   }
   .image {
@@ -163,13 +165,16 @@ $textOnWhite: rgb(131, 131, 131);
 
 @media (max-width: 1024px) {
   .modal-component {
+     overflow-y: auto;
     .links {
       width: 70%;
       margin: auto;
     }
 
     .modal {
-      width: 60%;
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
     }
   }
 }
@@ -185,11 +190,7 @@ $textOnWhite: rgb(131, 131, 131);
       width: 100%;
     }
 
-    .modal {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-    }
+   
 
     .android-images {
       width: 100%;

@@ -71,7 +71,7 @@ p {
     z-index: 0;
   }
   .welcome-text {
-    margin-left: 50px;
+   
     color: white;
     position: relative;
     z-index: 1;

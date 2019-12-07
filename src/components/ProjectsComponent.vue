@@ -375,14 +375,7 @@ $textOnWhite: rgb(148, 148, 148);
     background: #000;
   }
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
+  
   @media (max-width: 1500px) {
     
       .project-wrap {
