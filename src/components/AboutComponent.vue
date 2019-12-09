@@ -1,33 +1,28 @@
 <template>
   <div class="about-component">
-    <!-- <div class="triangle"></div> -->
-
     <div class="about-text">
-      
-        <div class="logo-wrap">
-          <img src="../images/wolf-logo.png" alt="wolf logo" />
-        </div>
-        <div class="my-story">
-          <h1>My Story</h1>
-          <div class="line"></div>
-          <p>
-            Hi im Martyn, i am a web developer and i got into coding in 2018.
-            I have been using the framework Vue for the past 8 months and im really loving it,
-            i recently jumped onto angular and react to switch it up.
-            <br />
-            <br />I've had many different jobs in the past but i feel now is the time for
-            me start my journey as a real web developer.
-          </p>
-        </div>
+      <div class="logo-wrap">
+        <img src="../images/wolf-logo.png" alt="wolf logo" />
       </div>
-  
+      <div class="my-story">
+        <h1>My Story</h1>
+        <div class="line"></div>
+        <p>
+          Hi im Martyn, i am a web developer and i got into coding in 2018.
+          I have been using the framework Vue for the past 8 months and im really loving it,
+          i recently jumped onto angular and react to switch it up.
+          <br />
+          <br />I've had many different jobs in the past but i feel now is the time for
+          me start my journey as a real web developer.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "about",
-  components: {}
+  name: "about"
 };
 </script>
 
@@ -44,7 +39,7 @@ $textOnWhite: rgb(148, 148, 148);
   padding: 50px 0;
 
   .about-text {
-    width:100%;
+    width: 100%;
     min-height: 70%;
   }
   .logo-wrap {
@@ -80,11 +75,11 @@ $textOnWhite: rgb(148, 148, 148);
 }
 
 @media (max-width: 600px) {
-  .about-component  {
-    height:100vh;
+  .about-component {
+    height: 100vh;
     .my-story {
-    width:90%;
+      width: 90%;
+    }
   }
-  } 
 }
 </style> 

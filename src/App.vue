@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <router-view />
+    <router-view @scrollHeights="scrollHeights"/>
     <footer>
       <div class="cover">
         <div class="copy">
@@ -50,6 +50,7 @@
 import jump from "jump.js";
 export default {
   mounted() {
+    console.log(this.height)
     window.addEventListener("scroll", () => {
       scrollY >= 918 && scrollY < 1490
         ? (this.navColor = "color:#555;")
@@ -73,6 +74,11 @@ export default {
       jump(section, {
         offset: 1
       });
+    }
+  },
+  computed: {
+    height() {
+      return scrollHeights
     }
   }
 };

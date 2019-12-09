@@ -15,9 +15,9 @@
         </div>
       </div>
     </div>
-    <AboutComponent />
-    <SkillsComponent />
-    <ProjectsComponent />
+    <AboutComponent class="about" />
+    <SkillsComponent class="skills" />
+    <ProjectsComponent class="projects" />
   </div>
 </template>
 
@@ -29,14 +29,26 @@ import jump from "jump.js";
 
 export default {
   name: "home",
+  mounted() {
+    const scrollHeights = {
+      aboutHeight: document.querySelector(".about").offsetTop,
+      skillsHeight: document.querySelector(".skills").offsetTop,
+      projectsHeight: document.querySelector(".projects").offsetTop
+    };
+    this.$emit("scrollHeights", scrollHeights);
+  },
   components: {
     AboutComponent,
     SkillsComponent,
     ProjectsComponent
   },
+  data() {
+    return {
+     
+    };
+  },
   methods: {
     jumpToAbout() {
-      console.log("jeff oh baby");
       jump(".about-component", {
         offset: 1
       });
@@ -63,15 +75,17 @@ p {
   display: flex;
   justify-content: start;
   align-items: center;
+  position: relative;
 
   .cover {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     z-index: 0;
   }
   .welcome-text {
-   
     color: white;
     position: relative;
     z-index: 1;
@@ -110,10 +124,10 @@ p {
   .background {
     .welcome-text {
       margin: auto;
-      text-align:center;
+      text-align: center;
     }
     .btn {
-      margin:80px;
+      margin: 80px;
     }
   }
 }
