@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <router-view @scrollHeights="scrollHeights"/>
+    <Home />
     <footer>
       <div class="cover">
         <div class="copy">
@@ -47,16 +47,23 @@
 </template>
 
 <script>
+import Home from "./components/Home";
 import jump from "jump.js";
 export default {
+  components: {
+    Home
+  },
   mounted() {
-    console.log(this.height)
+    const about = this.heights.aboutHeight - 20;
+    const skills = this.heights.skillsHeight - 20;
+    const projects = this.heights.projectsHeight - 20;
+
     window.addEventListener("scroll", () => {
-      scrollY >= 918 && scrollY < 1490
+      scrollY >= about && scrollY < skills
         ? (this.navColor = "color:#555;")
-        : scrollY >= 1490 && scrollY < 2423
+        : scrollY >= skills && scrollY < projects
         ? (this.navColor = "color:rgb(214, 214, 214);")
-        : scrollY >= 2423
+        : scrollY >= projects
         ? (this.navColor = "color:#555;")
         : (this.navColor = "color:rgb(214, 214, 214);");
     });
@@ -70,15 +77,15 @@ export default {
   },
   methods: {
     jumpTo(section) {
-      this.navOpen = false
+      this.navOpen = false;
       jump(section, {
         offset: 1
       });
     }
   },
   computed: {
-    height() {
-      return scrollHeights
+    heights() {
+      return this.$store.state.scrollHeights;
     }
   }
 };
@@ -157,7 +164,7 @@ p {
   }
   .tablet-links {
     width: 100%;
-  
+
     background: rgb(231, 231, 231);
     position: absolute;
     z-index: 50;
@@ -240,10 +247,10 @@ p {
 }
 
 .bounce-enter-active {
-  animation: bounce-in .5s;
+  animation: bounce-in 0.5s;
 }
 .bounce-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: bounce-in 0.5s reverse;
 }
 @keyframes bounce-in {
   0% {
@@ -267,7 +274,6 @@ p {
 }
 
 @media (max-width: 1600px) {
- 
 }
 
 @media (max-width: 1024px) {
@@ -286,8 +292,8 @@ p {
   }
 }
 @media (max-width: 600px) {
- #app .tablet-links {
-    height:100vh;
+  #app .tablet-links {
+    height: 100vh;
   }
 }
 </style>

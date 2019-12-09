@@ -30,12 +30,15 @@ import jump from "jump.js";
 export default {
   name: "home",
   mounted() {
-    const scrollHeights = {
+   
+    const heights = {
       aboutHeight: document.querySelector(".about").offsetTop,
       skillsHeight: document.querySelector(".skills").offsetTop,
       projectsHeight: document.querySelector(".projects").offsetTop
     };
-    this.$emit("scrollHeights", scrollHeights);
+
+    this.$store.commit('getHeights', heights)
+    
   },
   components: {
     AboutComponent,

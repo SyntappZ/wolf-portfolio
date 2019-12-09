@@ -19,9 +19,7 @@
           <p class="bold">{{ project.bold }}</p>
         </div>
         <hr />
-        <!-- <div class="tech-wrap">
-            <h3 class="tech" v-for="(tech, i) in project.tech" :key="i">{{ tech }}</h3>
-        </div>-->
+     
         <div class="links">
           <a :href="project.github" target="_">Github</a>
           <a v-if="project.isWebsite" :href="project.pageLink" target="_">visit site</a>
