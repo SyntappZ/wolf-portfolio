@@ -77,6 +77,33 @@ export default {
       modalOpen: false,
       selectedProject: null,
       projects: [
+
+         createProject(
+          "CDN Javascript",
+          ["react", "javascript", "css"],
+          "https://cdn-javascript.netlify.com/",
+          "https://github.com/SyntappZ/cdn-javascript",
+          `This is a javascript cdn database, it has a live search, random, sort and favorites functions, the favorites save to local storage.
+          There is a quick copy button and also a button that goes to the repo of the cdn so you can get more information.
+            `,
+          "fab fa-react",
+          "./cdn/cdn.png",
+          true
+        ),
+
+         createProject(
+          "awesome recipes",
+          ["vanilla javascript", "sass", "edamam api"],
+          "https://awesome-recipes.netlify.com",
+          "https://github.com/SyntappZ/Awesome-Recipes",
+          `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
+            and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
+            my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
+             for most of them.`,
+          "fab fa-sass",
+          "./awesome/main.jpg",
+          true
+        ),
         createProject(
           "image recipes",
           ["react", "firebase", "google vision", "edamam api"],
@@ -131,31 +158,8 @@ export default {
           true,
           "email: test@test.com - password: Test1234"
         ),
-        createProject(
-          "awesome recipes",
-          ["vanilla javascript", "sass", "edamam api"],
-          "https://awesome-recipes.netlify.com",
-          "https://github.com/SyntappZ/Awesome-Recipes",
-          `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
-            and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
-            my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
-             for most of them.`,
-          "fab fa-sass",
-          "./awesome/main.jpg",
-          true
-        ),
-        createProject(
-          "world of information",
-          ["vue", "materialize css", "wiki api"],
-          "https://world-of-information.netlify.com",
-          "https://github.com/SyntappZ/world-of-information",
-          `World of information is a wiki snippet search application. i learnt a good bit about using apis and axios making this project.
-          this believe was my first project using ajax and getting data from an api.
-            `,
-          "fab fa-vuejs",
-          "./woi/main.jpg",
-          true
-        ),
+       
+       
         createProject(
           "angels and demons",
           ["vue", "wiki api"],
@@ -318,7 +322,12 @@ $textOnWhite: rgb(148, 148, 148);
     display: flex;
     width: 100%;
     justify-content: space-around;
+
+    h5 {
+      text-transform: capitalize;
+    }
   }
+  
 
   .see-more {
     position: absolute;
