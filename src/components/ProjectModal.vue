@@ -19,9 +19,7 @@
           <p class="bold">{{ project.bold }}</p>
         </div>
         <hr />
-        <!-- <div class="tech-wrap">
-            <h3 class="tech" v-for="(tech, i) in project.tech" :key="i">{{ tech }}</h3>
-        </div>-->
+     
         <div class="links">
           <a :href="project.github" target="_">Github</a>
           <a v-if="project.isWebsite" :href="project.pageLink" target="_">visit site</a>
@@ -82,10 +80,12 @@ $textOnWhite: rgb(131, 131, 131);
     bottom: 0;
     font-size: 20px;
     color: grey;
+    
     cursor: pointer;
     transition: 0.3s;
     &:hover {
       color: black;
+     
     }
   }
   .image {
@@ -163,13 +163,16 @@ $textOnWhite: rgb(131, 131, 131);
 
 @media (max-width: 1024px) {
   .modal-component {
+     overflow-y: auto;
     .links {
       width: 70%;
       margin: auto;
     }
 
     .modal {
-      width: 60%;
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
     }
   }
 }
@@ -185,11 +188,7 @@ $textOnWhite: rgb(131, 131, 131);
       width: 100%;
     }
 
-    .modal {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-    }
+   
 
     .android-images {
       width: 100%;

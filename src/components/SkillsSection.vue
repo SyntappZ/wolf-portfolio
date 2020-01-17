@@ -144,15 +144,5 @@ $textOnWhite: rgb(148, 148, 148);
   }
 }
 
-@media (max-width: 640px) {
-   .skill-container {
-      .skill-wrap {
-        height:280px;
-      }
-   }
-   .text {
-      width:35%;
-     
-    }
-}
+
 </style>

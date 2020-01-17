@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    scrollHeights: {}
   },
   mutations: {
-
+   getHeights(state, obj) {
+    state.scrollHeights = obj
+   }
   },
   actions: {
 
