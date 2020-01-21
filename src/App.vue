@@ -35,7 +35,7 @@
             <i class="fas fa-envelope"></i>
           </a>
 
-          <p>Syntappz &copy; 2019</p>
+          <p>Syntappz &copy; {{ year }}</p>
         </div>
       </div>
       <div class="footer-img">
@@ -72,7 +72,8 @@ export default {
   data() {
     return {
       navColor: "",
-      navOpen: false
+      navOpen: false,
+      year: new Date().getFullYear()
     };
   },
   methods: {
