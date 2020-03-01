@@ -77,6 +77,23 @@ export default {
       modalOpen: false,
       selectedProject: null,
       projects: [
+        createProject(
+          "Vortex Player",
+          ["react native"],
+          'https://play.google.com/store/apps/details?id=com.vortexplayer',
+          'https://github.com/SyntappZ/vortex-mp3-player',
+            `This is my first react native project and the biggest project i have made so far, 
+            making this app i learn a lot about optimization and avoiding memory leaks, there are a couple problems with this app
+            that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this is due to the react native
+            bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time... read more on 
+            github.
+           
+            `,
+             "fab fa-react",
+             ['./vortex/vortex3.png', './vortex/vortex2.png', './vortex/vortex1.png'],
+             false
+
+        ),
 
          createProject(
           "CDN Javascript",
@@ -103,6 +120,20 @@ export default {
           "fab fa-sass",
           "./awesome/main.jpg",
           true
+        ),
+           createProject(
+          "the vault",
+          ["vue", "vuetify", "firebase"],
+          "https://the-vault.ml",
+          "https://github.com/SyntappZ/the-vault",
+          `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
+            delete, edit both, the password manager has a strength indicator and a generator so you
+             can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
+             easier. for testing use ---->`,
+          "fab fa-vuejs",
+          "./vault/main.jpg",
+          true,
+          "email: test@test.com - password: Test1234"
         ),
         createProject(
           "image recipes",
@@ -144,33 +175,10 @@ export default {
           ],
           false
         ),
-        createProject(
-          "the vault",
-          ["vue", "vuetify", "firebase"],
-          "https://the-vault.ml",
-          "https://github.com/SyntappZ/the-vault",
-          `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
-            delete, edit both, the password manager has a strength indicator and a generator so you
-             can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
-             easier. for testing use ---->`,
-          "fab fa-vuejs",
-          "./vault/main.jpg",
-          true,
-          "email: test@test.com - password: Test1234"
-        ),
+     
        
        
-        createProject(
-          "angels and demons",
-          ["vue", "wiki api"],
-          "https://angels-and-demons.netlify.com",
-          "https://github.com/SyntappZ/angels-and-demons",
-          `I made this site because im a fan of the supernatural series and thought it would be good to get 
-            some information on what the angel and demon characters are actually based on.`,
-          "fab fa-vuejs",
-          "./a-n-d/main.jpg",
-          true
-        ),
+      
         createProject(
           "fusion ninja",
           ["vue", "framework 7", "cordova"],

@@ -8,17 +8,21 @@
         </div>
       </div>
       <div class="links">
-        <a href="https://www.codewars.com/users/SyntappZ" target="_"> <div class="link">
-          <i class="fas fa-code"></i>
-          <h3>codewars</h3>
-          <p>where i practice algorithms</p>
-        </div></a>
-       
-      <a href="https://github.com/SyntappZ" target="_"> <div class="link">
-          <i class="fab fa-github-alt"></i>
-          <h3>github</h3>
-          <p>where i keep my code</p>
-        </div></a> 
+        <a href="https://www.codewars.com/users/SyntappZ" target="_">
+          <div class="link">
+            <i class="fas fa-code"></i>
+            <h3>codewars</h3>
+            <p>where i practice algorithms</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/SyntappZ" target="_">
+          <div class="link">
+            <i class="fab fa-github-alt"></i>
+            <h3>github</h3>
+            <p>where i keep my code</p>
+          </div>
+        </a>
       </div>
     </div>
     <div class="bottom">
@@ -63,6 +67,7 @@ $textOnWhite: rgb(148, 148, 148);
   min-height: 100vh;
   color: rgb(233, 233, 233);
   position: relative;
+  padding: 0 450px;
 
   .title {
     width: 100%;
@@ -77,11 +82,12 @@ $textOnWhite: rgb(148, 148, 148);
   }
   .skills-list {
     margin: auto;
-    width: 70%;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 0 150px;
   }
 
   .tech {
@@ -135,35 +141,64 @@ $textOnWhite: rgb(148, 148, 148);
   }
   .links {
     margin: auto;
-    width: 70%;
+    width: 80%;
     text-align: center;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     text-transform: capitalize;
+    flex-wrap: wrap;
     a {
       text-decoration: none;
     }
-  h3 {
-    color: $text;
-  }
+    h3 {
+      color: $text;
+    }
     p {
       color: $textOnWhite;
     }
     i {
       font-size: 50px;
       color: $primary;
-      transition: .3s;
+      transition: 0.3s;
     }
   }
-  .link:hover i{
-    color:$text;
+  .link:hover i {
+    color: $text;
     transform: scale(1.1);
   }
+}
 
-   @media (max-width: 1024px) {
+@media (max-width: 1300px) {
+  .tech-container {
+    padding: 0 300px;
   }
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 1024px) {
+  .tech-container {
+    padding: 100px;
+
+    .skills-list {
+      width: 100%;
+      padding: 0 100px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .tech-container {
+    padding: 0;
+    .skills-list {
+      width: 100%;
+      padding: 0;
+    }
+    .links {
+      justify-content: center;
+      width: 100%;
+      .link {
+        margin: 30px 0;
+      }
+    }
   }
 }
 </style>

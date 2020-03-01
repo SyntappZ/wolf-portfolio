@@ -4,9 +4,9 @@
       <div class="left-wrap">
         <div class="left-background">
           <technologies />
-          <div class="logo-wrap">
+          <!-- <div class="logo-wrap">
             <h1>Skills</h1>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -50,10 +50,11 @@ $primary: #d46134;
     background-color: #ffffff;
     min-height: 100vh;
     flex-wrap: wrap;
+   
   }
 
   .left-wrap {
-    width: 40%;
+    width: 100%;
     background: url("../images/man-on-rock.jpg");
     background-position: center center;
     background-size: cover;
@@ -71,9 +72,11 @@ $primary: #d46134;
     width: 150px;
     position: absolute;
     margin: auto;
-    right: -75px;
     top: 0;
-    bottom: 0;
+    bottom: 100px;
+ display:none;
+    right: 0;
+    left: 0;
     border-radius: 50%;
     background: rgb(219, 219, 219);
     display: flex;
@@ -84,24 +87,12 @@ $primary: #d46134;
   }
 
   .skills-wrap {
-    width: 60%;
+    width: 100%;
   }
 
-  @media (max-width: 1300px) {
-    .skills-wrap,
-    .left-wrap {
-      width: 100%;
-    }
-    .logo-wrap {
-      display: none;
-    }
-  }
-
-  @media (max-width: 1024px) {
-  }
-  @media (max-width: 600px) {
-  }
+ 
 }
+
 </style> 
 
 

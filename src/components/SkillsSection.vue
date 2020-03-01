@@ -58,12 +58,14 @@ $blue: rgb(71, 97, 114);
 $textOnWhite: rgb(148, 148, 148);
 
 .skill-container {
-  width: 60%;
+  width: 100%;
   margin: auto;
-  height: 100%;
+  min-height: 100vh;
+  padding: 0 500px;
+  box-sizing: border-box;
 
   .layout {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -79,6 +81,7 @@ $textOnWhite: rgb(148, 148, 148);
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
     &:nth-child(2) {
       flex-direction: row-reverse;
     }

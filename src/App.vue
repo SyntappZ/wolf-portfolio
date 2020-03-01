@@ -54,19 +54,7 @@ export default {
     Home
   },
   mounted() {
-    const about = this.heights.aboutHeight - 20;
-    const skills = this.heights.skillsHeight - 20;
-    const projects = this.heights.projectsHeight - 20;
-
-    window.addEventListener("scroll", () => {
-      scrollY >= about && scrollY < skills
-        ? (this.navColor = "color:#555;")
-        : scrollY >= skills && scrollY < projects
-        ? (this.navColor = "color:rgb(214, 214, 214);")
-        : scrollY >= projects
-        ? (this.navColor = "color:#555;")
-        : (this.navColor = "color:rgb(214, 214, 214);");
-    });
+  
   },
 
   data() {
@@ -85,9 +73,7 @@ export default {
     }
   },
   computed: {
-    heights() {
-      return this.$store.state.scrollHeights;
-    }
+   
   }
 };
 </script>
