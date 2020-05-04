@@ -124,7 +124,7 @@ export default {
            createProject(
           "the vault",
           ["vue", "vuetify", "firebase"],
-          "https://the-vault.ml",
+          "https://vue-password-manager.web.app/",
           "https://github.com/SyntappZ/the-vault",
           `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
             delete, edit both, the password manager has a strength indicator and a generator so you
